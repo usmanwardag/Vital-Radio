@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
+
+    <title>Erun</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{{ url_for('static', filename='css/ie10-viewport-bug-workaround.css') }}" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="{{ url_for('static', filename='js/ie-emulation-modes-warning.js') }}"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+
+          <div class="masthead clearfix">
+            <div class="inner">
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="\">Home</a></li>
+                  <li class="active"><a href="#">FAQ</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+
+          <div class="inner faq">  
+            <p class="lead lead1"><b> Where will the event take place and how can I register? </b></p>
+            <p class="lead lead1">You can run anywhere you want and compete with hundreds of runners. You will get real time leaderboard updates to know where you stand. You can register for the event <a href="https://docs.google.com/forms/d/e/1FAIpQLSeB8bfA2PPEmHavf9DPhKZlGsCmdTCe9CHd_4cEewigkBIQig/viewform" target="_blank">here.</a></p>
+            <p class="lead lead1"><b> How long is the run? </b></p>
+            <p class="lead lead1"> 3 Kilometers or 1.86 miles.  </p>
+            <p class="lead lead1"><b> What do I need to participate in the event? </b></p>
+            <p class="lead lead1">A smartphone with internet data connection and location permissions enabled. </p>
+            <p class="lead lead1"><b> Do all the runners run at the same time? </b></p>
+            <p class="lead lead1">Yes. The event will start at 7:30 pm (GMT +5) on May 14. There will be an initial warmup period of 5 minutes to get you ready for the run. Immediately afterwards, the application will start to track your run and the leaderboard will be continuously updated. </p>
+
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <img width="100px" src="{{ url_for('static', filename='img/logo_black.png') }}">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ url_for("static", filename="js/jquery.min.js") }}"><\/script>')</script>
+    <script src='{{ url_for("static", filename="js/bootstrap.min.js") }}'></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src='{{ url_for("static", filename="js/ie10-viewport-bug-workaround.js") }}'></script>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-98358475-1', 'auto');
+    ga('send', 'pageview');
+    </script>
+  </body>
+</html>
