@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/favicon.png') }}">
 
-    <title>Erun</title>
+    <title>Vital Radio</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
@@ -54,20 +54,20 @@
           </div>
 
           <div class="inner faq">  
-            <p class="lead lead1"><b> Where will the event take place and how can I register? </b></p>
-            <p class="lead lead1">You can run anywhere you want and compete with hundreds of runners. You will get real time leaderboard updates to know where you stand. You can register for the event <a href="https://docs.google.com/forms/d/e/1FAIpQLSeB8bfA2PPEmHavf9DPhKZlGsCmdTCe9CHd_4cEewigkBIQig/viewform" target="_blank">here.</a></p>
-            <p class="lead lead1"><b> How long is the run? </b></p>
-            <p class="lead lead1"> 3 Kilometers or 1.86 miles.  </p>
-            <p class="lead lead1"><b> What do I need to participate in the event? </b></p>
-            <p class="lead lead1">A smartphone with internet data connection and location permissions enabled. </p>
-            <p class="lead lead1"><b> Do all the runners run at the same time? </b></p>
-            <p class="lead lead1">Yes. The event will start at 7:30 pm (GMT +5) on May 14. There will be an initial warmup period of 5 minutes to get you ready for the run. Immediately afterwards, the application will start to track your run and the leaderboard will be continuously updated. </p>
+            <p class="lead lead1"><b> What does Vital Radio do? </b></p>
+            <p class="lead lead1">Vital Radio is a non-wearable device that uses wireless signals in the environment to monitor breathing rate. </a></p>
+            <p class="lead lead1"><b> How does it work? </b></p>
+            <p class="lead lead1"> Vital Radio extracts the raw wireless signals in the environment and tracks their strength. It then applies deep learning techniques to automatically determine a breathing activity window. Afterwards, it extracts features in time and frequency domains to estimate breathing rate.  </p>
+            <p class="lead lead1"><b> How much does it cost? </b></p>
+            <p class="lead lead1">The current implementation is on expensive software defined radios. We estimate a cost of less than 50$ if the radio is developed commerically. </p>
+            <p class="lead lead1"><b> Where can I find more technical information about the project? </b></p>
+            <p class="lead lead1">We have published our research findings <a href="https://arxiv.org/abs/1704.00620" target="_blank">here</a> and <a target="_blank" href="https://arxiv.org/abs/1704.05708">here</a>. </p>
 
           </div>
-
+          <br> 
           <div class="mastfoot">
             <div class="inner">
-              <img width="100px" src="{{ url_for('static', filename='img/logo_black.png') }}">
+              <img width="100px" src="{{ url_for('static', filename='img/logo.png') }}">
             </div>
           </div>
 
