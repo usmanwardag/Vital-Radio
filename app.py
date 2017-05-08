@@ -13,5 +13,12 @@ def index():
 def guess():
     return render_template('faq.html')
 
+@app.route('/usrp_calculate')
+def usrp():
+	def generate():
+		return ['Hey\n', '2']
+
+	return app.response_class(generate(), mimetype='text/xml')
+
 if __name__ == '__main__':
     app.run()

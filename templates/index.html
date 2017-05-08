@@ -91,6 +91,31 @@
       document.getElementById("activity").innerHTML = data[1];
       document.getElementById("strength").innerHTML = data[2];
       document.getElementById("update").innerHTML = data[3];
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', '{{ url_for("usrp") }}');
+      xhr.send();
+      var position = 0;
+
+      function handleNewData() {
+
+          var messages = xhr.responseText.split('\n');
+          console.log(messages);
+      }
+
+      var timer;
+      timer = setInterval(function() {
+          // check the response for new data
+          handleNewData();
+          
+      }, 1000);
+
+      var timer1;
+      timer1 = setInterval(function() {
+          // check the response for new data
+          console.log('Second')
+        
+      }, 3000);
       
     </script>
 
