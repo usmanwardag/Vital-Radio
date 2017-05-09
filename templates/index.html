@@ -95,28 +95,24 @@
       var xhr = new XMLHttpRequest();
       xhr.open('GET', '{{ url_for("usrp") }}');
       xhr.send();
-      var position = 0;
 
       function handleNewData() {
-
           var messages = xhr.responseText.split('\n');
           console.log(messages);
+          document.getElementById("timer").innerHTML = messages[0];
+
+          xhr.open('GET', '{{ url_for("usrp") }}');
+          xhr.send();
+
       }
 
       var timer;
       timer = setInterval(function() {
           // check the response for new data
           handleNewData();
-          
-      }, 1000);
+          //console.log();  
 
-      var timer1;
-      timer1 = setInterval(function() {
-          // check the response for new data
-          console.log('Second')
-        
-      }, 3000);
-      
+      }, 13000);
     </script>
 
     <!-- Bootstrap core JavaScript

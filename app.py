@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from flask.ext.socketio import SocketIO
+from radiotest import Radio
 
 app = Flask(__name__)
 app.debug = True
@@ -16,7 +16,10 @@ def guess():
 @app.route('/usrp_calculate')
 def usrp():
 	def generate():
-		return ['Hey\n', '2']
+		radio = Radio()
+		data = radio.track()
+		print(data)
+		return [str(data)]
 
 	return app.response_class(generate(), mimetype='text/xml')
 
