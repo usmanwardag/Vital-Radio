@@ -5,6 +5,7 @@ import time
 import pickle
 import scipy.signal
 import adaptfilt as ad
+from processing import find_fft_peaks
 
 import seaborn as sns
 from matplotlib import pyplot as plt
@@ -20,9 +21,9 @@ class Radio(object):
 		self.src = analog.sig_source_c(self.samp_rate, analog.GR_SIN_WAVE, 1000, 1, 0)
 		self.snk = blocks.vector_sink_c()
 		self.snk_ref = blocks.vector_sink_c()
-		self.usrp_ref = uhd.usrp_source(",".join(("", "serial=F4F59F")),
+		self.usrp_ref = uhd.usrp_source(",".join(("", "serial=F4F57F")),
 							uhd.stream_args(cpu_format="fc32", channels=range(1),),)
-		self.usrp_rx = uhd.usrp_source(",".join(("", "serial=F4F57F")),
+		self.usrp_rx = uhd.usrp_source(",".join(("", "serial=F4F59F")),
 							uhd.stream_args(cpu_format="fc32", channels=range(1),),)
 		self.usrp_tx = uhd.usrp_sink(",".join(("", "serial=F4F597")),
 							uhd.stream_args(cpu_format="fc32", channels=range(1),),)
@@ -57,8 +58,11 @@ class Radio(object):
 		
 		overall = self._filter(data, data_ref)
 		
-		return len(overall)
-		#return 1
+		#plt.plot(overall)
+		#plt.show()
+
+		rate = find_fft_peaks(data)
+		return rate
 
 	def _filter(self, d, u, M=150):
 
@@ -105,8 +109,4 @@ if __name__ == "__main__":
 	radio = Radio()
 	data = radio.track()
 
-	plt.plot(data)
-	plt.show()
-
-	#import scipy.io
-	#scipy.io.savemat('data/2_breath_150', {'data': overall})
+	

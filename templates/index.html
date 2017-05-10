@@ -84,6 +84,8 @@
 
     </div>
 
+    <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
+
     <script type="text/javascript">
       var data = JSON.parse('{{ data | tojson }}');
       console.log(data);
@@ -97,8 +99,10 @@
       xhr.send();
 
       function handleNewData() {
+
           var messages = xhr.responseText.split('\n');
           console.log(messages);
+          responsiveVoice.speak("Breathing rate " + messages[0] + " breaths per second");
           document.getElementById("timer").innerHTML = messages[0];
 
           xhr.open('GET', '{{ url_for("usrp") }}');
@@ -110,10 +114,11 @@
       timer = setInterval(function() {
           // check the response for new data
           handleNewData();
-          //console.log();  
+          //console.log();
 
-      }, 13000);
+      }, 17000);
     </script>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
